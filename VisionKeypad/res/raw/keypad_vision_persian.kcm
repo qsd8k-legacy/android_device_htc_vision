@@ -14,9 +14,15 @@
 
 #
 # Persian keyboard layout.
-# (c) NeverGone, October 8, 2013.
+# This is a Persian keyboard layout for HTC Desire Z phone.
+# (c) NeverGone, November 10, 2013.
 # Thanks to mosi110.
 #
+# Changes:
+# Nov 10, 2013
+# -- remapped keyboard layout to match AOSP on-screen keyboard
+# Oct 8, 2013
+# -- initial commit
 
 type OVERLAY
 key A              {
@@ -28,15 +34,15 @@ key A              {
 }
 key B              {
 	label:'B'       
-	base:'\u0630'       
+	base:'\u062f'       
 	shift, capslock:'B'       
 	alt: '+'       
 	shift+alt:'+'       
 }
 key C              {
 	label:'C'       
-	base:'\u0632'       
-	shift, capslock:'\u0698'       
+	base:'\u0631'       
+	shift, capslock:'C'       
 	alt: '_'       
 	shift+alt:'_'       
 }
@@ -49,7 +55,7 @@ key D              {
 }
 key E              {
 	label:'E'       
-	base:'\u062b'       
+	base:'\u0641'       
 	shift, capslock:'E'       
 	alt: '\u06f3'       
 	shift+alt:'3'       
@@ -77,7 +83,7 @@ key H              {
 }
 key I              {
 	label:'I'       
-	base:'\u0647'       
+	base:'\u062d'       
 	shift, capslock:'I'       
 	alt: '\u06f8'       
 	shift+alt:'8'       
@@ -105,42 +111,42 @@ key L              {
 }
 key M              {
 	label:'M'       
-	base:'\u067e'       
-	shift, capslock:'M'       
-	alt: '\''
+	base:'\u0648'       
+	shift, capslock:'\u0624'       
+	alt: '\u0624'
 	shift+alt:'\''       
 }
 key N              {
 	label:'N'       
-	base:'\u062f'       
+	base:'\u067e'       
 	shift, capslock:'N'       
 	alt: '='      
 	shift+alt:'='      
 }
 key O              {
 	label:'O'       
-	base:'\u062e'       
+	base:'\u062c'       
 	shift, capslock:'O'       
 	alt: '\u06f9'       
 	shift+alt:'9'       
 }
 key P              {
 	label:'P'       
-	base:'\u062d'       
+	base:'\u0686'       
 	shift, capslock:'P'       
 	alt: '\u06f0'       
 	shift+alt:'0'       
 }
 key Q              {
 	label:'Q'       
-	base:'\u0636'       
+	base:'\u0635'       
 	shift, capslock:'Q'       
 	alt: '\u06f1'       
 	shift+alt:'1'       
 }
 key R              {
 	label:'R'       
-	base:'\u0642'       
+	base:'\u063a'       
 	shift, capslock:'R'       
 	alt: '\u06f4'       
 	shift+alt:'4'       
@@ -154,51 +160,51 @@ key S              {
 }
 key T              {
 	label:'T'       
-	base:'\u0641'       
+	base:'\u0639'       
 	shift, capslock:'T'       
 	alt: '\u06f5'       
 	shift+alt:'5'       
 }
 key U              {
 	label:'U'       
-	base:'\u0639'       
+	base:'\u062e'       
 	shift, capslock:'U'       
 	alt: '\u06f7'       
 	shift+alt:'7'       
 }
 key V              {
 	label:'V'       
-	base:'\u0631'       
+	base:'\u0630'       
 	shift, capslock:'V'       
 	alt: '-'       
 	shift+alt:'-'       
 }
 key W              {
 	label:'W'       
-	base:'\u0635'       
+	base:'\u0642'       
 	shift, capslock:'W'       
 	alt: '\u06f2'       
 	shift+alt:'2'       
 }
 key X              {
 	label:'X'       
-	base:'\u0637'       
-	shift, capslock:'X'       
-	alt: '\u20AC'  
+	base:'\u0632'       
+	shift, capslock:'\u0698'       
+	alt: '\u0698'  
 	shift+alt:'\u20AC'  
 }
 key Y              {
 	label:'Y'       
-	base:'\u063a'       
+	base:'\u0647'       
 	shift, capslock:'Y'       
 	alt: '\u06f6'       
 	shift+alt:'6'       
 }
 key Z              {
 	label:'Z'       
-	base:'\u0638'       
-	shift, capslock:'Z'       
-	alt: '\u00A3'  
+	base:'\u0637'       
+	shift, capslock:'\u0638'       
+	alt: '\u0638'  
 	shift+alt:'\u00A3'  
 } 
 key BUTTON_3             {
@@ -217,10 +223,10 @@ key BUTTON_5             {
 }
 key BUTTON_R2 {
   label:'?'
-  base:'\u0648'
-  shift, capslock:'?'
-  alt: '"'
-  shift+alt: '<'
+  base:'\u06a9'
+  shift, capslock:'\u06af'
+  alt: '\u06af'
+  shift+alt: '"'
 }
 key PERIOD         {
 	label:'.'       
