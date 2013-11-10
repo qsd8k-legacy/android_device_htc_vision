@@ -2,7 +2,7 @@
 # Device CIDs for this keyboard: HTC__001, HTC__016, HTC__032, HTC__038,
 # HTC__621, HTC__E11, VODAP001, VODAPE17, BM___001, ORANGB10, ORANG006.
 # This keyboard layout is also used as a fallback, when CID is not any
-# of the above.
+# of the above and does not correspond to other keylayouts.
 
 # QWERTY keyboard
 key 14    DEL               WAKE
