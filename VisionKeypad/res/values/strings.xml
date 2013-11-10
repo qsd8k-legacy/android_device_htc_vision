@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Vision Keypad</string>
+    <string name="app_name">Desire Z Keypad</string>
     <string name="keyboard_layouts_label">Desire Z keypad</string>
     <string name="keypad_vision_english_label">English</string>
     <string name="keypad_vision_persian_label">فارسی</string>
