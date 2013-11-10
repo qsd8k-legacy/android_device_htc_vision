@@ -38,9 +38,6 @@ BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x4000000
 BOARD_KERNEL_PAGE_SIZE := 4096
 
-# Workaround for vision broken overlay scaling
-BOARD_OVERLAY_MINIFICATION_LIMIT := 2
-
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := vision
 
 # cat /proc/emmc
@@ -64,10 +61,9 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 # Define kernel config for inline building
 TARGET_KERNEL_CONFIG := vision_andromadus_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm7x30-3.0
-
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/common
 TARGET_PREBUILT_KERNEL := device/htc/msm7x30-common/msm7230/kernel
 TARGET_RECOVERY_FSTAB := device/htc/vision/ramdisk/fstab.vision
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
