@@ -1,7 +1,5 @@
 bin/akmd
 bin/bma150_usr
-bin/htc_ebdlogd
-bin/logcat2
 bin/rmt_storage
 
 etc/AudioBTID.csv
