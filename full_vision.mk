@@ -35,4 +35,5 @@ $(call inherit-product, device/htc/vision/device.mk)
 PRODUCT_NAME := full_vision
 PRODUCT_DEVICE := vision
 PRODUCT_BRAND := HTC
+PRODUCT_MANUFACTURER := HTC
 PRODUCT_MODEL := Desire Z
