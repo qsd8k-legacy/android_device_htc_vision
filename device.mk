@@ -26,8 +26,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/vision/ramdisk/init.vision.rc:root/init.vision.rc \
-    device/htc/vision/ramdisk/ueventd.vision.rc:root/ueventd.vision.rc \
-    device/htc/vision/ramdisk/fstab.vision:root/fstab.vision
+    device/htc/vision/ramdisk/ueventd.vision.rc:root/ueventd.vision.rc
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/vision/device-vendor.mk)
@@ -114,17 +113,6 @@ PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/nam/gps.conf
 # Copy bcm4329 firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/htc/msm7x30-common/msm7230/kernel
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-PRODUCT_COPY_FILES += \
-    device/htc/msm7x30-common/msm7230/bcmdhd.ko:system/lib/modules/bcmdhd.ko
-endif
-
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
@@ -133,9 +121,6 @@ $(call inherit-product, device/htc/vision/media_htcaudio.mk)
 $(call inherit-product, device/htc/vision/media_a1026.mk)
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
-
-# we have enough storage space to hold precise GC data (dalvik.vm.dexopt-flags=m=y)
-PRODUCT_TAGS += dalvik.gc.type-precise
 
 ADDITIONAL_BUILD_PROPERTIES += sys.mem.max_hidden_apps=4
 
