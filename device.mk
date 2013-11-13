@@ -26,7 +26,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/vision/ramdisk/init.vision.rc:root/init.vision.rc \
-    device/htc/vision/ramdisk/ueventd.vision.rc:root/ueventd.vision.rc
+    device/htc/vision/ramdisk/ueventd.vision.rc:root/ueventd.vision.rc \
+    device/htc/msm7x30-common/rootdir/fstab.msm7x30:root/fstab.vision
+# the line above is terribly dirty hack. But fstab doesn't work without it for some reason.
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/vision/device-vendor.mk)
