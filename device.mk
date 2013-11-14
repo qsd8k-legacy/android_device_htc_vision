@@ -100,6 +100,14 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/keychars/vision-keypad-tur.kcm:system/usr/keychars/vision-keypad-tur.kcm \
     device/htc/vision/keychars/vision-keypad-wwe.kcm:system/usr/keychars/vision-keypad-wwe.kcm 
 
+# DSP
+PRODUCT_COPY_FILES += \
+    device/htc/vision/dsp/AudioBTID.csv:/system/etc/AudioBTID.csv \
+    device/htc/vision/dsp/A1026_CFG.csv:/system/etc/A1026_CFG.csv \
+    device/htc/vision/dsp/AdieHWCodec.csv:/system/etc/AdieHWCodec.csv \
+    device/htc/vision/dsp/AdieHWCodec_WA.csv:/system/etc/AdieHWCodec_WA.csv
+
+
 # Device specific firmware
 PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
