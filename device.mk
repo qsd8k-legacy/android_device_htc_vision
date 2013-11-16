@@ -134,4 +134,4 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 ADDITIONAL_BUILD_PROPERTIES += sys.mem.max_hidden_apps=4
 
-$(call inherit-product-if-exists, vendor/htc/vision/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/vision/vision-vendor.mk)
