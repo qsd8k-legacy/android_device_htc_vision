@@ -54,9 +54,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/vision/configs/voicemail-conf.xml:system/etc/voicemail-conf.xml
 
-# Sensors, GPS, Lights, Power, Keyboard
+# Sensors & Lights
 PRODUCT_PACKAGES += \
-    gps.vision \
     lights.vision \
     sensors.vision \
     VisionKeypad
