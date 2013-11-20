@@ -207,20 +207,6 @@ key Z              {
 	alt: '\u0638'
 	shift+alt:'\u00A3'
 }
-key BUTTON_3             {
-        label:':'
-        base:':'
-        shift, capslock:':'
-        alt: ':'
-        shift+alt:':'
-}
-key BUTTON_5             {
-        label:'\u0416'
-        base:'\u0436'
-        shift, capslock:'\u0416'
-        alt: '|'
-        shift+alt:'|'
-}
 key BUTTON_R2 {
   label:'?'
   base:'\u06a9'
@@ -261,7 +247,7 @@ key SEMICOLON      {
 	label:';'
 	base:';'
 	shift, capslock:':'
-	alt: '?'
+	alt: '\u061f'
 	shift+alt:'>'
 }
 key AT             {
