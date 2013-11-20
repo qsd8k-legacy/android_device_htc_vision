@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Desire Z Keypad</string>
-    <string name="keyboard_layouts_label">Desire Z keypad</string>
-    <string name="keypad_vision_english_label">English</string>
-    <string name="keypad_vision_persian_label">فارسی</string>
-    <string name="keypad_vision_russian_label">Русский</string>
+    <string name="app_name">Desire Z Keyboard</string>
+    <string name="keyboard_layouts_label">HTC Desire Z hardware keyboard</string>
+    <string name="keypad_vision_english_label" translatable="false">English</string>
+    <string name="keypad_vision_persian_label" translatable="false">فارسی</string>
+    <string name="keypad_vision_russian_label" translatable="false">Русский</string>
 </resources>

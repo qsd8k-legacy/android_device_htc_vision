@@ -4,6 +4,10 @@
             android:label="@string/keypad_vision_english_label"
             android:keyboardLayout="@raw/keypad_vision_english" />
 
+    <keyboard-layout android:name="keypad_vision_english_wwe"
+            android:label="@string/keypad_vision_english_label"
+            android:keyboardLayout="@raw/keypad_vision_english_wwe" />
+
     <keyboard-layout android:name="keypad_vision_persian"
             android:label="@string/keypad_vision_persian_label"
             android:keyboardLayout="@raw/keypad_vision_persian" />
