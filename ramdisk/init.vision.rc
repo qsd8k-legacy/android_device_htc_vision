@@ -53,6 +53,9 @@ on boot
 
     chmod 0664 /sys/module/pm/parameters/idle_sleep_mode
 
+    # Permission for Vibrator intensity
+    chown system system /sys/class/timed_output/vibrator/voltage_level
+
     # Disable idle power collapse to speed up the boot process
     # Enable it when boot is complete
     write /sys/module/pm2/parameters/idle_sleep_mode 3
