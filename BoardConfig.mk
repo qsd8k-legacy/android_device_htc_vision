@@ -34,7 +34,7 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 435941376
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1394606080
 
 # Kernel
-TARGET_KERNEL_CONFIG := vision_andromadus_ion_pmem_defconfig
+TARGET_KERNEL_CONFIG := vision_andromadus_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/vision/bluetooth
