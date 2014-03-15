@@ -417,7 +417,7 @@ set_speaker_light_locked(struct light_device_t* dev,
      */
     if (state->flashMode != LIGHT_FLASH_NONE) {
         ALOGV("set_led_state color R=%02x, G=%02x, B=%02X, flashing\n", r, g, b);
-        
+
         err = write_int(&leds[AMBER_LED].blink, r ? 1 : 0);
         err = write_int(&leds[GREEN_LED].blink, g ? 1 : 0);
     }

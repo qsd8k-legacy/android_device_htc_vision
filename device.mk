@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/keychars/vision-keypad-rus.kcm:system/usr/keychars/vision-keypad-rus.kcm \
     device/htc/vision/keychars/vision-keypad-sea.kcm:system/usr/keychars/vision-keypad-sea.kcm \
     device/htc/vision/keychars/vision-keypad-tur.kcm:system/usr/keychars/vision-keypad-tur.kcm \
-    device/htc/vision/keychars/vision-keypad-wwe.kcm:system/usr/keychars/vision-keypad-wwe.kcm 
+    device/htc/vision/keychars/vision-keypad-wwe.kcm:system/usr/keychars/vision-keypad-wwe.kcm
 
 # DSP
 PRODUCT_COPY_FILES += \
@@ -94,7 +94,7 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
     device/htc/vision/firmware/default_org_WA.acdb:system/etc/firmware/default_org_WA.acdb \
     device/htc/vision/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
-    device/htc/vision/firmware/Vision_SPK.acdb:system/etc/firmware/Vision_SPK.acdb 
+    device/htc/vision/firmware/Vision_SPK.acdb:system/etc/firmware/Vision_SPK.acdb
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/htc/vision/configs/gps.conf:system/etc/gps.conf
