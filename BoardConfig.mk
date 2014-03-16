@@ -38,7 +38,7 @@ TARGET_KERNEL_CONFIG := vision_andromadus_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/vision/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/vision/configs/libbt_vndcfg.txt
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/vision/bluetooth/libbt_vndcfg.txt
 
 # Misc
 BOARD_USE_LEGACY_TRACKPAD := true
