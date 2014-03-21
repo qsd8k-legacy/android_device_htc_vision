@@ -127,6 +127,8 @@ service wpa_supplicant /system/bin/wpa_supplicant \
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -aABDKL
     class late_start
+    disabled
+    oneshot
 
 service dhcpcd_bnep0 /system/bin/dhcpcd -ABKL
     class main
