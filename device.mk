@@ -32,10 +32,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/vision/overlay
 
-# gsm config xml file
-PRODUCT_COPY_FILES += \
-    device/htc/vision/configs/voicemail-conf.xml:system/etc/voicemail-conf.xml
-
 # Sensors & Lights
 PRODUCT_PACKAGES += \
     lights.vision \
