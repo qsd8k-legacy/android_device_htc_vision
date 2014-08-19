@@ -20,9 +20,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 PRODUCT_COPY_FILES += \
     device/htc/vision/ramdisk/init.vision.rc:root/init.vision.rc \
+    device/htc/vision/ramdisk/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc \
     device/htc/vision/ramdisk/ueventd.vision.rc:root/ueventd.vision.rc \
-    device/htc/msm7x30-common/rootdir/fstab.msm7x30:root/fstab.vision
-# the line above is terribly dirty hack. But fstab doesn't work without it for some reason.
+	device/htc/vision/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30 \
+	device/htc/vision/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
+    device/htc/vision/rootdir/fstab.msm7x30:root/fstab.msm7x30
 
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -39,6 +41,81 @@ PRODUCT_PACKAGES += \
     lights.vision \
     sensors.vision \
     VisionKeypad
+
+# media configs
+PRODUCT_COPY_FILES += \
+    device/htc/vision/rootdir/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    device/htc/vision/rootdir/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/vision/rootdir/system/etc/audio_policy.conf:system/etc/audio_policy.conf
+
+# Camera
+PRODUCT_COPY_FILES += \
+    device/htc/vision/prebuilt/libsurfaceflinger_client.so:system/lib/libsurfaceflinger_client.so
+
+PRODUCT_PACKAGES += \
+    camera.msm7x30
+
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.primary.msm7x30 \
+    audio_policy.msm7x30 \
+    audio.usb.default \
+    libaudioutils \
+    libtinyalsa
+
+# Video
+PRODUCT_PACKAGES += \
+    copybit.msm7x30 \
+    gralloc.msm7x30 \
+    hwcomposer.msm7x30 \
+    libgenlock \
+    libmemalloc \
+    liboverlay \
+    libQcomUI \
+    libtilerenderer \
+    libdashplayer
+
+#wireless
+PRODUCT_PACKAGES += \
+    libnetcmdiface
+
+# Power HAL & GPS
+PRODUCT_PACKAGES += \
+    gps.msm7x30 \
+    power.msm7x30
+
+# Media
+PRODUCT_PACKAGES += \
+    libOmxCore \
+    libOmxVenc \
+    libmm-omxcore \
+    libdivxdrmdecrypt \
+    libOmxVdec \
+    libstagefrighthw
+
+# Misc
+PRODUCT_PACKAGES += \
+    com.android.future.usb.accessory
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    make_ext4fs \
+    setup_fs
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.compass.xml:system/etc/permissions/android.hardware.sensor.compass.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
@@ -89,6 +166,13 @@ PRODUCT_COPY_FILES += \
 
 # Device specific firmware
 PRODUCT_COPY_FILES += \
+    device/htc/vision/firmware/vidc_720p_command_control.fw:system/etc/firmware/vidc_720p_command_control.fw \
+    device/htc/vision/firmware/vidc_720p_h263_dec_mc.fw:system/etc/firmware/vidc_720p_h263_dec_mc.fw \
+    device/htc/vision/firmware/vidc_720p_h264_dec_mc.fw:system/etc/firmware/vidc_720p_h264_dec_mc.fw \
+    device/htc/vision/firmware/vidc_720p_h264_enc_mc.fw:system/etc/firmware/vidc_720p_h264_enc_mc.fw \
+    device/htc/vision/firmware/vidc_720p_mp4_dec_mc.fw:system/etc/firmware/vidc_720p_mp4_dec_mc.fw \
+    device/htc/vision/firmware/vidc_720p_mp4_enc_mc.fw:system/etc/firmware/vidc_720p_mp4_enc_mc.fw \
+    device/htc/vision/firmware/vidc_720p_vc1_dec_mc.fw:system/etc/firmware/vidc_720p_vc1_dec_mc.fw \
     device/htc/vision/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd \
     device/htc/vision/firmware/default.acdb:system/etc/firmware/default.acdb \
     device/htc/vision/firmware/default_org.acdb:system/etc/firmware/default_org.acdb \
@@ -96,14 +180,25 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/firmware/vidc_720p_mp2_dec_mc.fw:system/etc/firmware/vidc_720p_mp2_dec_mc.fw \
     device/htc/vision/firmware/Vision_SPK.acdb:system/etc/firmware/Vision_SPK.acdb
 
+# we have enough storage space to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
+
+# lower the increment
+ADDITIONAL_BUILD_PROPERTIES += dalvik.vm.heapgrowthlimit=36m
+
+PRODUCT_AAPT_CONFIG := normal hdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.composition.type=gpu \
+    ro.config.low_ram=true \
+    debug.egl.recordable.rgba8888=1
+
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/htc/vision/configs/gps.conf:system/etc/gps.conf
 
 # Copy bcm4329 firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
-
-# common msm7x30 configs
-$(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # htc audio settings
 PRODUCT_PROPERTY_OVERRIDES += \
