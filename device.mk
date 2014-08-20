@@ -22,9 +22,9 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/ramdisk/init.vision.rc:root/init.vision.rc \
     device/htc/vision/ramdisk/init.htc7x30.usb.rc:root/init.htc7x30.usb.rc \
     device/htc/vision/ramdisk/ueventd.vision.rc:root/ueventd.vision.rc \
-	device/htc/vision/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30 \
-	device/htc/vision/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
-    device/htc/vision/rootdir/fstab.msm7x30:root/fstab.msm7x30
+    device/htc/vision/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30 \
+    device/htc/vision/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
+    device/htc/vision/rootdir/fstab.msm7x30:root/fstab.vision
 
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
