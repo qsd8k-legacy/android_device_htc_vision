@@ -11,8 +11,15 @@ on init
 
     mkdir /devlog 0700 root root
 
+    # disable swap page clustering
+    write /proc/sys/vm/page-cluster 0
+
+    # reduce swappiness for foreground processes
+    write /proc/sys/vm/swappiness 20
+
 on fs
     mount_all /fstab.msm7x30
+    swapon_all /fstab.msm7x30
 
 on post-fs
     chmod 0771 /cache
