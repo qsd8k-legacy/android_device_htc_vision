@@ -115,6 +115,9 @@ on boot
 
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
+    # enable ksm by default
+    write /sys/kernel/mm/ksm/run 1
+
 service wpa_supplicant /system/bin/wpa_supplicant \
     -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf \
     -O/data/misc/wifi/sockets \
