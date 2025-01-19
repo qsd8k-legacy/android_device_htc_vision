@@ -18,5 +18,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_vision.mk
+    $(LOCAL_DIR)/aosp_vision.mk
 

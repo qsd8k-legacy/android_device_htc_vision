@@ -32,7 +32,8 @@
 #include "LightSensor.h"
 #include "ProximitySensor.h"
 #include "AkmSensor.h"
-
+#include <cstring>
+#include <errno.h>
 /*****************************************************************************/
 
 struct sensors_poll_context_t {

@@ -15,7 +15,8 @@
 #
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
+# Inherit device configuration
+$(call inherit-product, device/htc/vision/system_props.mk)
 #Andromadus Vendor include
 
 PRODUCT_COPY_FILES += \
@@ -25,6 +26,19 @@ PRODUCT_COPY_FILES += \
     device/htc/vision/rootdir/fstab.msm7x30:recovery/root/fstab.msm7x30 \
     device/htc/vision/rootdir/fstab.msm7x30:root/fstab.msm7x30 \
     device/htc/vision/rootdir/fstab.msm7x30:root/fstab.vision
+
+
+#TWRP
+# PRODUCT_COPY_FILES += \
+#     device/htc/vision/recovery/root/sbin/htcbatt:recovery/root/sbin/htcbatt \
+#     device/htc/vision/recovery/root/sbin/choice_fn:recovery/root/sbin/choice_fn \
+#     device/htc/vision/recovery/root/sbin/detect_key:recovery/root/sbin/detect_key \
+#     device/htc/vision/recovery/root/sbin/offmode_charging:recovery/root/sbin/offmode_charging \
+#     device/htc/vision/recovery/root/sbin/power_test:recovery/root/sbin/power_test \
+#     device/htc/vision/recovery/root/init.recovery.vision.rc:recovery/root/init.recovery.vision.rc
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb
 
 # Override /proc/sys/vm/dirty_ratio on UMS
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -54,11 +68,11 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
-    audio.primary.msm7x30 \
     audio_policy.msm7x30 \
     audio.usb.default \
     libaudioutils \
-    libtinyalsa
+    libtinyalsa \
+    audio.primary.msm7x30
 
 # Video
 PRODUCT_PACKAGES += \
@@ -70,7 +84,8 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libQcomUI \
     libtilerenderer \
-    libdashplayer
+    libdashplayer \
+    libstlport
 
 #wireless
 PRODUCT_PACKAGES += \
@@ -78,8 +93,7 @@ PRODUCT_PACKAGES += \
 
 # Power HAL & GPS
 PRODUCT_PACKAGES += \
-    gps.msm7x30 \
-    power.msm7x30
+    power.msm7x30 \
 
 # Media
 PRODUCT_PACKAGES += \
@@ -192,6 +206,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/htc/vision/configs/gps.conf:system/etc/gps.conf
+
+# Wifi
+PRODUCT_PACKAGES += \
+	libnetcmdiface \
+	dhcpcd.conf \
+	hostapd \
+	wpa_supplicant \
+	wpa_supplicant.conf
 
 # Copy bcm4329 firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)

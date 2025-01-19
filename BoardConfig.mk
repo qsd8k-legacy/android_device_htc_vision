@@ -22,6 +22,8 @@ USE_CAMERA_STUB := true
 
 TARGET_BOOTLOADER_BOARD_NAME := vision
 
+TARGET_SPECIFIC_HEADER_PATH := device/htc/vision/include
+
 # Platform
 TARGET_BOARD_PLATFORM := msm7x30
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -31,7 +33,7 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := scorpion
+TARGET_CPU_VARIANT := generic
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 ARCH_ARM_HAVE_VFP := true
 ARCH_ARM_HAVE_NEON := true
@@ -47,19 +49,36 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_MAX_PARTITIONS := 36
 TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_CACHEIMAGE_PARTITION_SIZE := 307199000
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Recovery
+TARGET_RECOVERY_DEVICE_DIRS += device/htc/vision
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TARGET_RECOVERY_FSTAB := device/htc/vision/rootdir/fstab.msm7x30
 RECOVERY_FSTAB_VERSION := 2
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_10x18.h\"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 BOARD_HAS_NO_SELECT_BUTTON := true
+# TWRP
+TW_THEME := portrait_mdpi
+TW_FLASH_FROM_STORAGE := true
+TW_INTERNAL_STORAGE_PATH := "/sdcard"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_INCLUDE_CRYPTO := true
+TW_NO_SCREEN_BLANK := true
+TW_INCLUDE_DUMLOCK := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+#RECOVERY_VARIANT := twrp
+TW_NO_USB_STORAGE := true
+TW_NO_CPU_TEMP := true
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/htc/vision
+TARGET_KERNEL_SOURCE := kernel/htc/msm7x30
 TARGET_KERNEL_CONFIG := cyanogenmod_vision_defconfig
-BOARD_KERNEL_CMDLINE := no_console_suspend=1
+BOARD_KERNEL_CMDLINE := no_console_suspend=1 androidboot.selinux=permissive androidboot.hardware=vision
 BOARD_KERNEL_RECOVERY_CMDLINE := $(BOARD_KERNEL_CMDLINE) msmsdcc_power_gpio=88
 BOARD_KERNEL_BASE := 0x4000000
 BOARD_KERNEL_PAGE_SIZE := 4096
@@ -80,15 +99,18 @@ USE_OPENGL_RENDERER := true
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 TARGET_USES_ION := true
 TARGET_USES_C2D_COMPOSITION := true
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 # QCOM enhanced A/V
 # TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 
 # Audio
-TARGET_QCOM_AUDIO_VARIANT := caf
 BOARD_HAVE_HTC_AUDIO := true
-BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
+BOARD_HAVE_PRE_KITKAT_AUDIO_POLICY_BLOB := true # Check later
 BOARD_USES_LEGACY_ALSA_AUDIO := true
+AUDIO_FEATURE_ENABLED_INCALL_MUSIC := true
+AUDIO_FEATURE_ENABLED_COMPRESS_VOIP := false
+AUDIO_FEATURE_ENABLED_PROXY_DEVICE := false
 
 # GPS
 BOARD_USES_QCOM_GPS := true
@@ -138,32 +160,3 @@ TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # Hardware tuning framework
 BOARD_HARDWARE_CLASS := device/htc/vision/cmhw
-
-# SELinux
-BOARD_SEPOLICY_DIRS += \
-    device/htc/vision/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    app.te \
-    bluetooth.te \
-    device.te \
-    domain.te \
-    drmserver.te \
-    file_contexts \
-    files \
-    file.te \
-    hci_init.te \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    keystore.te \
-    kickstart.te \
-    mediaserver.te \
-    rild.te \
-    surfaceflinger.te \
-    system.te \
-    ueventd.te \
-    untrusted_app.te \
-    vold.te \
-    wpa.te \
-    wpa_socket.te

@@ -80,9 +80,6 @@
         <item>0</item>
     </integer-array>
 
-    <!-- We can change button brightness -->
-    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
-
     <!-- Array of output values for keyboard backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
@@ -98,9 +95,6 @@
         <item>0</item>
         <item>0</item>
     </integer-array>
-
-    <!-- Default keyboard backlight level (matches config_buttonBrightnessSettingDefault) -->
-    <integer name="config_keyboardBrightnessSettingDefault">255</integer>
 
     <!-- The number of degrees to rotate the display when the keyboard is open.
          A value of -1 means no change in orientation by default. -->
@@ -200,15 +194,6 @@
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
      <bool name="config_intrusiveNotificationLed">true</bool>
-
-     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-     <bool name="config_intrusiveBatteryLed">true</bool>
-     
-     <!-- We can change battery LED color (orange/amber/green) -->
-     <bool name="config_multiColorBatteryLed">true</bool>
-
-    <!-- LED Flashlight -->
-    <bool name="config_enableTorch">true</bool>
     
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
@@ -216,16 +201,4 @@
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
-	    <!-- Hardware 'face' keys present on the device, stored as a bit field.
-       This integer should equal the sum of the corresponding value for each
-       of the following keys present:
-             1 - Home
-             2 - Back
-             4 - Menu
-             8 - Search
-            16 - App switch
-            32 - Camera
-         For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareKeys">47</integer>
 </resources>

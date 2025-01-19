@@ -28,6 +28,9 @@
 
 #include "SensorBase.h"
 
+#include <cstring>
+#include <errno.h>
+
 /*****************************************************************************/
 
 SensorBase::SensorBase(

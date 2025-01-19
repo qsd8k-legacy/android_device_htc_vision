@@ -27,6 +27,8 @@
 #include <cutils/log.h>
 
 #include "AkmSensor.h"
+#include <cstring>
+#include <errno.h>
 
 /*****************************************************************************/
 

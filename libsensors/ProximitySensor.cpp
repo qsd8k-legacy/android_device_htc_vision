@@ -27,6 +27,8 @@
 #include <cutils/log.h>
 
 #include "ProximitySensor.h"
+#include <cstring>
+#include <errno.h>
 
 /*****************************************************************************/
 
